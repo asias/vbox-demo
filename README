@@ -1,0 +1,6 @@
+# start a vbox vm
+$ sh vbox.sh
+
+# start the netperf test
+$ netperf -H 192.168.56.102 -t TCP_STREAM
+$ netperf -H 192.168.56.102 -t UDP_RR
