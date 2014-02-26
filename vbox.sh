@@ -4,10 +4,10 @@ img=osv.vdi
 vmdir=~/VirtualBox\ VMs/$name
 
 # Stop vm 
-VBoxManage controlvm $name poweroff 
+VBoxManage controlvm $name poweroff  >/dev/null 2>&1
 
 # Unreigster vm
-VBoxManage unregistervm $name --delete 
+VBoxManage unregistervm $name --delete  >/dev/null 2>&1
 
 # Create and register the vm
 VBoxManage createvm  --name $name -ostype Linux26_64
