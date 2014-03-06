@@ -1,5 +1,5 @@
 # Setup name and dir
-name=osv8
+name=osv
 img=osv.vdi
 vmdir=~/VirtualBox\ VMs/$name
 
@@ -29,7 +29,10 @@ VBoxManage modifyvm $name --nictype1 virtio
 VBoxManage modifyvm $name --hostonlyadapter1 vboxnet0
 
 # Turn on HPET timer
-VBoxManage modifyvm $name --hpet on
+#VBoxManage modifyvm $name --hpet on
+
+# Use ICH9 instead of piix
+VBoxManage modifyvm $name --chipset ich9
 
 # Setup serial
 VBoxManage modifyvm $name  --uart1 0x3f8 4
