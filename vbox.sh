@@ -45,7 +45,7 @@ VBoxManage modifyvm $name  --uartmode1 file "$vmdir/$name.log"
 VBoxManage startvm --type gui $name
 #VBoxManage startvm --type headless $name
 
-sleep 10
+#sleep 10
 
 # Check the serial log
-cat "$vmdir/$name.log"
+#cat "$vmdir/$name.log"
