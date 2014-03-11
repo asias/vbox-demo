@@ -13,6 +13,9 @@ VBoxManage unregistervm $name --delete  >/dev/null 2>&1
 VBoxManage createvm  --name $name -ostype Linux26_64
 VBoxManage registervm "$vmdir/$name.vbox"
 
+# Setup mem
+VBoxManage modifyvm osv --memory 1024
+
 # Setup SATA controller
 #qemu-img convert -f raw $img -O vdi "$vmdir/$name.vdi"
 cp -v $img "$vmdir/$name.vdi"
