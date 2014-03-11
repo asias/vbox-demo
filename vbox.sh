@@ -18,6 +18,9 @@ VBoxManage modifyvm osv --memory 1024
 
 # Setup SATA controller
 #qemu-img convert -f raw $img -O vdi "$vmdir/$name.vdi"
+if [ ! -f osv.vdi ]; then
+    unzip osv.vdi.zip
+fi
 cp -v $img "$vmdir/$name.vdi"
 VBoxManage storagectl  $name  --name SATA --add sata --controller IntelAHCI 
 VBoxManage storageattach  $name --storagectl SATA --port 0 --type hdd --medium "$vmdir/$name.vdi"
