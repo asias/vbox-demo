@@ -32,18 +32,18 @@ VBoxManage modifyvm $name --nictype1 virtio
 VBoxManage modifyvm $name --hostonlyadapter1 vboxnet0
 
 # Turn on HPET timer
-#VBoxManage modifyvm $name --hpet on
+VBoxManage modifyvm $name --hpet on
 
 # Use ICH9 instead of piix
-VBoxManage modifyvm $name --chipset ich9
+#VBoxManage modifyvm $name --chipset ich9
 
 # Setup serial
 VBoxManage modifyvm $name  --uart1 0x3f8 4
 VBoxManage modifyvm $name  --uartmode1 file "$vmdir/$name.log"
 
 # Start vm
-#VBoxManage startvm --type gui $name
-VBoxManage startvm --type headless $name
+VBoxManage startvm --type gui $name
+#VBoxManage startvm --type headless $name
 
 sleep 10
 
